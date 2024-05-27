@@ -1,0 +1,164 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import json\n",
+    "\n",
+    "# Load both JSON files\n",
+    "with open(r'C:\\Users\\ahmednabil\\Documents\\Downloads\\excel\\processed_data.json', 'r', encoding='utf-8') as f:\n",
+    "    data1 = json.load(f)\n",
+    "\n",
+    "with open(r'C:\\Users\\ahmednabil\\Documents\\Downloads\\excel\\formatted_training_data.json', 'r', encoding='utf-8') as f:\n",
+    "    data2 = json.load(f)\n",
+    "\n",
+    "# Merge the data\n",
+    "merged_data = data1 + data2\n",
+    "\n",
+    "# Save as JSONL\n",
+    "with open(r'C:\\Users\\ahmednabil\\Documents\\Downloads\\excel\\merged_data.jsonl', 'w', encoding='utf-8') as f:\n",
+    "    for item in merged_data:\n",
+    "        json.dump(item, f)\n",
+    "        f.write('\\n')\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "C:\\Users\\ahmednabil\\AppData\\Roaming\\Python\\Python311\\site-packages\\huggingface_hub\\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.\n",
+      "  warnings.warn(\n",
+      "c:\\Python311\\Lib\\site-packages\\accelerate\\accelerator.py:446: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches']). Please pass an `accelerate.DataLoaderConfiguration` instead: \n",
+      "dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False)\n",
+      "  warnings.warn(\n",
+      "  0%|          | 1/270 [00:21<1:36:18, 21.48s/it]"
+     ]
+    }
+   ],
+   "source": [
+    "from transformers import GPT2LMHeadModel, GPT2Tokenizer, GPT2Config\n",
+    "from transformers import Trainer, TrainingArguments\n",
+    "from datasets import load_dataset\n",
+    "import torch\n",
+    "\n",
+    "# Load dataset\n",
+    "dataset = load_dataset('json', data_files=r'C:\\Users\\ahmednabil\\Documents\\Downloads\\excel\\merged_data.jsonl', split='train')\n",
+    "\n",
+    "# Initialize the model and tokenizer\n",
+    "model_name = \"gpt2\"\n",
+    "tokenizer = GPT2Tokenizer.from_pretrained(model_name)\n",
+    "\n",
+    "# Add a padding token to the tokenizer\n",
+    "tokenizer.pad_token = tokenizer.eos_token\n",
+    "\n",
+    "model = GPT2LMHeadModel.from_pretrained(model_name)\n",
+    "\n",
+    "# Tokenize the dataset\n",
+    "def tokenize_function(examples):\n",
+    "    inputs = tokenizer(examples['prompt'] + examples['completion'], padding=\"max_length\", truncation=True)\n",
+    "    inputs[\"labels\"] = inputs[\"input_ids\"].copy()\n",
+    "    return inputs\n",
+    "\n",
+    "tokenized_dataset = dataset.map(tokenize_function, batched=True, remove_columns=[\"prompt\", \"completion\"])\n",
+    "\n",
+    "# Training arguments\n",
+    "training_args = TrainingArguments(\n",
+    "    output_dir=\"./results\",\n",
+    "    overwrite_output_dir=True,\n",
+    "    num_train_epochs=3,\n",
+    "    per_device_train_batch_size=2,\n",
+    "    save_steps=10_000,\n",
+    "    save_total_limit=2,\n",
+    "    logging_dir='./logs',\n",
+    ")\n",
+    "\n",
+    "# Trainer\n",
+    "trainer = Trainer(\n",
+    "    model=model,\n",
+    "    args=training_args,\n",
+    "    train_dataset=tokenized_dataset,\n",
+    ")\n",
+    "\n",
+    "# Train the model\n",
+    "trainer.train()\n",
+    "\n",
+    "# Save the model and tokenizer\n",
+    "model.save_pretrained(\"./results\")\n",
+    "tokenizer.save_pretrained(\"./results\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Q: What is Galala University (GU)?\n"
+     ]
+    }
+   ],
+   "source": [
+    "from transformers import GPT2LMHeadModel, GPT2Tokenizer\n",
+    "\n",
+    "# Load the trained model and tokenizer\n",
+    "model_name = \"./results\"  # Directory where the model is saved\n",
+    "tokenizer = GPT2Tokenizer.from_pretrained(model_name)\n",
+    "model = GPT2LMHeadModel.from_pretrained(model_name)\n",
+    "\n",
+    "# Add a padding token to the tokenizer if not already added\n",
+    "tokenizer.pad_token = tokenizer.eos_token\n",
+    "\n",
+    "# Function to generate responses\n",
+    "def generate_response(prompt, max_length=50):\n",
+    "    inputs = tokenizer.encode(prompt, return_tensors=\"pt\")\n",
+    "    outputs = model.generate(inputs, max_length=max_length, num_return_sequences=1, pad_token_id=tokenizer.eos_token_id)\n",
+    "    response = tokenizer.decode(outputs[0], skip_special_tokens=True)\n",
+    "    return response\n",
+    "\n",
+    "# Test the function with a sample prompt\n",
+    "prompt = \"Q: What is Galala University (GU)?\"\n",
+    "response = generate_response(prompt)\n",
+    "print(response)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

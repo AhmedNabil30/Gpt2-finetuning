@@ -1,0 +1,117 @@
+[
+
+    {"prompt": "Q: What is Galala University (GU)?", "completion": " Galala University (GU), established in 2020, is a pioneering Egyptian institution offering bachelor\u2019s programs in diverse fields such as Medicine, Engineering, and Computer Science. GU emphasizes academic excellence and practical learning, facilitated by a distinguished international faculty. It is the first in Egypt to offer dual degree programs with Arizona State University (ASU), allowing students to earn both Egyptian and American bachelor's degrees in fields like Business and Engineering."}
+,
+    {
+        "prompt": " Q: What facilities and resources does GU offer?",
+        "completion": "GU's campus boasts cutting-edge facilities, including over 50 labs and on-campus medical care. The university is situated in Galala City, known for its scenic beauty and tourist attractions, and provides fully serviced accommodations ensuring students' safety and comfort."
+    },
+    {
+        "prompt": " Q: What is the mission of Galala University?",
+        "completion": "GU's mission is to build a welcoming, inspiring, and stimulating academic environment that acts as a development hub for the community and enriches wider society through the quality of its graduates and the impact of its research."
+    },
+    {
+        "prompt": " Q: What is GU's vision?",
+        "completion": "GU aims to be an internationally recognized, excellent, innovative learning and research community committed to making the world a better place."
+    },
+    {
+        "prompt": " Q: What are the primary strategic goals of GU?",
+        "completion": "The primary goals include:\nCreating an excellent, sustainable academic and non-academic experience for students.\nEnhancing the life chances of graduates through an outcomes-based curriculum and partnerships with employers.\nDeveloping an inclusive and impactful research culture.\nEstablishing effective partnership networks at local, regional, and international levels.\nAchieving recognition in regional and global rankings for young universities."
+    },
+    {
+        "prompt": " Q: What are the enabling goals of GU?",
+        "completion": "The enabling goals include:\nAchieving student recruitment and retention targets.\nMaintaining the financial sustainability of the university.\nDeveloping and implementing effective marketing and communication operations.\nCreating effective faculty and staff development programs.\nBuilding a SMART University on a SMART campus."
+    },
+    {
+        "prompt": " Q: What is the address and contact information for GU?",
+        "completion": "Address: Galala Plateau, Attaka, Suez\nE-mail: info@gu.edu.eg\nHotline: 15888"
+    },
+    {
+        "prompt": " Q: Where can I apply to GU?",
+        "completion": "Applications can only be conducted online through https://www.gu.edu.eg/ during the announced dates for application. You can also apply through https://admission.egypt-hub.edu.eg."
+    },
+    {
+        "prompt": " Q: Who is eligible to apply to GU?",
+        "completion": "Students who have finished grade 12 or the third secondary year can apply. Current grade 12 students can apply starting from the early application announced dates."
+    },
+    {
+        "prompt": " Q: What is the language of instruction at GU?",
+        "completion": "English is the language of instruction."
+    },
+    {
+        "prompt": " Q: Can students with older secondary school certificates apply?",
+        "completion": "Yes, students can apply as per the admission requirements of the year if they are currently enrolled at another university and have passed all the registered courses or if they completed high school in 2019/2020."
+    },
+    {
+        "prompt": " Q: Does GU accept transfer students?",
+        "completion": "Yes, transfer students are considered for acceptance after the evaluation of their university transcript and course descriptions to join the second year in the running academic year as per the admission rules for transfer students."
+    },
+    {
+        "prompt": " Q: What tests are required for admission to GU?",
+        "completion": "The admission examination consists of three parts:\nGeneral Exam\nEnglish Exam\nSpecialized Exam based on the program"
+    },
+    {
+        "prompt": " Q: When and where are the admission tests held?",
+        "completion": "The test dates and locations are scheduled and will be sent by email to the applicants. The admission exams are held at university halls and laboratories prepared for hosting each type of exam."
+    },
+    {
+        "prompt": " Q: What are the requirements for Thanweya Azhari students?",
+        "completion": "Overall scores must be equivalent to Egyptian Thanweya Amma, and all religion subjects are not calculated."
+    },
+    {
+        "prompt": " Q: What are the requirements for international certificates?",
+        "completion": "The admission process is regulated by the Supreme Council of Universities. Students must have achieved an overall score equivalent to Egyptian Thanweya Amma, pass the Arabic and religion exams of Thanaweya Amma before or after final acceptance, submit proof of 12 years of schooling, and pass all required admission tests and other requirements if any."
+    },
+    {
+        "prompt": " Q: When do the admission exams start?",
+        "completion": "The admission exams start from March, and registration is done through the university link."
+    },
+    {
+        "prompt": " Q: What is the content of the admission exams?",
+        "completion": "The exams test the students\u2019 knowledge of the subjects that qualify them to join each field. The content focuses on basic high school subjects, general knowledge, and languages (English language)."
+    },
+    {
+        "prompt": " Q: Do students have to pay fees for 25 exams?",
+        "completion": "Students do not need to pay fees for 25 exams nor apply to 5 universities or more. The admission system approved by the Minister of Higher Education is fair in terms of admission requirements and offers flexibility in accepting Arab and foreign equivalent certificates."
+    },
+    {
+        "prompt": " Q: Are admission exam fees refundable in case of rejection?",
+        "completion": "No, the university application and admission exam fees are non-refundable."
+    },
+    {
+        "prompt": " Q: Are there models for these exams?",
+        "completion": "Currently, there are no specific formats for the admission exams, and the Ministry of Higher Education will decide the exam formats through the Knowledge Bank."
+    },
+    {
+        "prompt": " Q: What are the procedures for tuition fee payments?",
+        "completion": "Students must deposit the required fees within 3 working days at the banks. Failure to pay and submit the required documents to the university will result in the student being considered \"failed to apply\" and having no right to apply in the same year."
+    },
+    {
+        "prompt": " Q: Can students withdraw their papers to apply to another university if there is a problem after admission?",
+        "completion": "If there is a problem related to admission, the type of problem and the parties involved are examined first to attempt to solve it."
+    },
+    {
+        "prompt": " Q: Is the new system applied to applicants to international universities like the American University and the German International University?",
+        "completion": "This system only applies to private and national universities."
+    },
+    {
+        "prompt": " Q: What transportation services does GU provide?",
+        "completion": "GU maintains an extensive bus service available to all GU communities, including students and staff. Buses travel between the GU campus and neighborhoods all over Cairo and Giza on set schedules five days a week, with limited services on Saturday."
+    },
+    {
+        "prompt": " Q: What medical care services does GU offer?",
+        "completion": "The GU Clinic offers comprehensive health care services, including medical advice, treatment, vaccines, pharmacy services, and external care."
+    },
+    {
+        "prompt": " Q: What accommodation options are available at GU?",
+        "completion": "GU offers two dormitory options:\nOn-campus dorms with close proximity to academic resources.\nSky City with stunning mountain views."
+    },
+    {
+        "prompt": " Q: What are the costs for university dorms at GU?\nA:\nSingle room: 7000 EGP per month (28000 EGP for four months)\nDouble room: 3750 EGP per person per month (15000 EGP for four months)\nDouble room inside a unit: 3600 EGP per person per month (14400 EGP for four months)\nMaster double room (with separate bathroom): 4000 EGP per person per month (16000 EGP for four months)\nSingle room inside a unit: 5500 EGP per month (22000 EGP for four months)\nDouble chalet: 9000 EGP per person per month (36000 EGP for four months)\nQ: What scholarships and financial aid are available at GU?",
+        "completion": "GU offers various scholarships, including:\nFull scholarships for the top 300 students with Egyptian Thanaweya Amma\n50% scholarships for students in different sections based on specific academic achievements\nAthletic scholarships for medal winners in international and regional competitions\nGU-ASU Dual Degree programs scholarships with different percentages based on academic performance\nScholarships offered by USAID and the American University in Cairo\nSawiris Distinction Scholarship for Public High School Graduates and Students with Disabilities\nGifted Student Scholarships (GSS) Program by the Innovators Support Fund"
+    },
+    {
+        "prompt": " Q: Are tuition fee discounts available at GU?",
+        "completion": "Yes, discounts are available for:\nChildren of martyrs from armed forces, police, and medical staff (50% discount)\nSecond-degree relatives (siblings) (10% discount)\nChildren of faculty members and full-time university employees (20% discount)"
+    }
+]
